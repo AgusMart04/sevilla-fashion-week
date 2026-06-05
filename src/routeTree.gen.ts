@@ -14,6 +14,7 @@ import { Route as SedesRouteImport } from "./routes/sedes"
 import { Route as PatrocinioRouteImport } from "./routes/patrocinio"
 import { Route as FestSevillaRouteImport } from "./routes/fest-sevilla"
 import { Route as EventoRouteImport } from "./routes/evento"
+import { Route as ContactoRouteImport } from "./routes/contacto"
 import { Route as ConceptoRouteImport } from "./routes/concepto"
 import { Route as IndexRouteImport } from "./routes/index"
 
@@ -42,6 +43,11 @@ const EventoRoute = EventoRouteImport.update({
   path: "/evento",
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactoRoute = ContactoRouteImport.update({
+  id: "/contacto",
+  path: "/contacto",
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConceptoRoute = ConceptoRouteImport.update({
   id: "/concepto",
   path: "/concepto",
@@ -56,6 +62,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute
   "/concepto": typeof ConceptoRoute
+  "/contacto": typeof ContactoRoute
   "/evento": typeof EventoRoute
   "/fest-sevilla": typeof FestSevillaRoute
   "/patrocinio": typeof PatrocinioRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   "/": typeof IndexRoute
   "/concepto": typeof ConceptoRoute
+  "/contacto": typeof ContactoRoute
   "/evento": typeof EventoRoute
   "/fest-sevilla": typeof FestSevillaRoute
   "/patrocinio": typeof PatrocinioRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   "/": typeof IndexRoute
   "/concepto": typeof ConceptoRoute
+  "/contacto": typeof ContactoRoute
   "/evento": typeof EventoRoute
   "/fest-sevilla": typeof FestSevillaRoute
   "/patrocinio": typeof PatrocinioRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
   fullPaths:
     | "/"
     | "/concepto"
+    | "/contacto"
     | "/evento"
     | "/fest-sevilla"
     | "/patrocinio"
@@ -95,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | "/"
     | "/concepto"
+    | "/contacto"
     | "/evento"
     | "/fest-sevilla"
     | "/patrocinio"
@@ -104,6 +115,7 @@ export interface FileRouteTypes {
     | "__root__"
     | "/"
     | "/concepto"
+    | "/contacto"
     | "/evento"
     | "/fest-sevilla"
     | "/patrocinio"
@@ -114,6 +126,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConceptoRoute: typeof ConceptoRoute
+  ContactoRoute: typeof ContactoRoute
   EventoRoute: typeof EventoRoute
   FestSevillaRoute: typeof FestSevillaRoute
   PatrocinioRoute: typeof PatrocinioRoute
@@ -158,6 +171,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof EventoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    "/contacto": {
+      id: "/contacto"
+      path: "/contacto"
+      fullPath: "/contacto"
+      preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     "/concepto": {
       id: "/concepto"
       path: "/concepto"
@@ -178,6 +198,7 @@ declare module "@tanstack/react-router" {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConceptoRoute: ConceptoRoute,
+  ContactoRoute: ContactoRoute,
   EventoRoute: EventoRoute,
   FestSevillaRoute: FestSevillaRoute,
   PatrocinioRoute: PatrocinioRoute,

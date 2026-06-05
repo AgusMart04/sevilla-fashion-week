@@ -10,6 +10,9 @@ export const Route = createFileRoute("/patrocinio")({
       { name: "description", content: "Oportunidades de patrocinio y colaboración estratégica con Sevilla Fashion Week." },
       { property: "og:title", content: "Patrocinio — Sevilla Fashion Week" },
       { property: "og:description", content: "Asociación exclusiva con un evento internacional de moda en su edición fundacional." },
+      { property: "og:image", content: "https://sevilla-fashion-week-demo.vercel.app/og-image.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://sevilla-fashion-week-demo.vercel.app/og-image.jpg" },
     ],
   }),
   component: () => (

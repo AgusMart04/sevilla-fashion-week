@@ -172,7 +172,7 @@ export function FestSevilla() {
           <Reveal delay={200}>
             <div className="mt-12 aspect-video w-full hairline overflow-hidden">
               <iframe
-                src="https://www.youtube-nocookie.com/embed/WdC2mPiDvBE?autoplay=1&loop=1&playlist=WdC2mPiDvBE&controls=1&showinfo=0&rel=0&modestbranding=1"
+                src="https://www.youtube-nocookie.com/embed/WdC2mPiDvBE?autoplay=1&mute=1&loop=1&playlist=WdC2mPiDvBE&controls=1&showinfo=0&rel=0&modestbranding=1"
                 title="Levels — Adelanto"
                 allow="autoplay; encrypted-media"
                 allowFullScreen

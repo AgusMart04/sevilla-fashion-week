@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 import sponsor1 from "@/assets/sponsors/sponsor-1.png";
 import sponsor2 from "@/assets/sponsors/sponsor-2.png";
@@ -180,6 +181,14 @@ const tiers = [
 export function Sponsors() {
   const [openTier, setOpenTier] = useState<string | null>(null);
   const selectedTier = tiers.find((t) => t.tag === openTier);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section id="patrocinadores" className="relative bg-background py-32 md:py-48">
@@ -249,13 +258,14 @@ export function Sponsors() {
                       <span className="h-px w-6 bg-silver/40" />
                     </button>
                   )}
-                  <a
-                    href="/patrocinio#contacto"
+                  <Link
+                    to="/contacto"
+                    onClick={handleContactClick}
                     className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-silver-bright group/cta min-h-[44px]"
                   >
                     Solicitar dossier
                     <span className="h-px w-8 bg-silver transition-all duration-500 group-hover/cta:w-14" />
-                  </a>
+                  </Link>
                 </div>
               </article>
             </Reveal>
@@ -338,14 +348,17 @@ export function Sponsors() {
                 ))}
               </div>
               <div className="mt-8 pt-6 border-t border-border">
-                <a
-                  href="/patrocinio#contacto"
-                  onClick={() => setOpenTier(null)}
+                <Link
+                  to="/contacto"
+                  onClick={(e) => {
+                    setOpenTier(null);
+                    handleContactClick(e);
+                  }}
                   className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-silver-bright group/cta min-h-[44px]"
                 >
                   Solicitar dossier
                   <span className="h-px w-8 bg-silver transition-all duration-500 group-hover/cta:w-14" />
-                </a>
+                </Link>
               </div>
             </>
           )}

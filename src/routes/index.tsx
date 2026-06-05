@@ -22,8 +22,10 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Sevilla Fashion Week" },
           { property: "og:description", content: "Un nuevo destino internacional de la moda en el corazón de Andalucía. 1–10 Septiembre." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://sevilla-fashion-week-demo.vercel.app" },
+      { property: "og:image", content: "https://sevilla-fashion-week-demo.vercel.app/og-image.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://sevilla-fashion-week-demo.vercel.app/og-image.jpg" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
