@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from "./routes/__root"
 import { Route as SevillaRouteImport } from "./routes/sevilla"
 import { Route as SedesRouteImport } from "./routes/sedes"
 import { Route as PatrocinioRouteImport } from "./routes/patrocinio"
+import { Route as PaisesInvitadosRouteImport } from "./routes/paises-invitados"
 import { Route as FestSevillaRouteImport } from "./routes/fest-sevilla"
 import { Route as EventoRouteImport } from "./routes/evento"
 import { Route as ContactoRouteImport } from "./routes/contacto"
@@ -31,6 +32,11 @@ const SedesRoute = SedesRouteImport.update({
 const PatrocinioRoute = PatrocinioRouteImport.update({
   id: "/patrocinio",
   path: "/patrocinio",
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaisesInvitadosRoute = PaisesInvitadosRouteImport.update({
+  id: "/paises-invitados",
+  path: "/paises-invitados",
   getParentRoute: () => rootRouteImport,
 } as any)
 const FestSevillaRoute = FestSevillaRouteImport.update({
@@ -65,6 +71,7 @@ export interface FileRoutesByFullPath {
   "/contacto": typeof ContactoRoute
   "/evento": typeof EventoRoute
   "/fest-sevilla": typeof FestSevillaRoute
+  "/paises-invitados": typeof PaisesInvitadosRoute
   "/patrocinio": typeof PatrocinioRoute
   "/sedes": typeof SedesRoute
   "/sevilla": typeof SevillaRoute
@@ -75,6 +82,7 @@ export interface FileRoutesByTo {
   "/contacto": typeof ContactoRoute
   "/evento": typeof EventoRoute
   "/fest-sevilla": typeof FestSevillaRoute
+  "/paises-invitados": typeof PaisesInvitadosRoute
   "/patrocinio": typeof PatrocinioRoute
   "/sedes": typeof SedesRoute
   "/sevilla": typeof SevillaRoute
@@ -86,6 +94,7 @@ export interface FileRoutesById {
   "/contacto": typeof ContactoRoute
   "/evento": typeof EventoRoute
   "/fest-sevilla": typeof FestSevillaRoute
+  "/paises-invitados": typeof PaisesInvitadosRoute
   "/patrocinio": typeof PatrocinioRoute
   "/sedes": typeof SedesRoute
   "/sevilla": typeof SevillaRoute
@@ -98,6 +107,7 @@ export interface FileRouteTypes {
     | "/contacto"
     | "/evento"
     | "/fest-sevilla"
+    | "/paises-invitados"
     | "/patrocinio"
     | "/sedes"
     | "/sevilla"
@@ -108,6 +118,7 @@ export interface FileRouteTypes {
     | "/contacto"
     | "/evento"
     | "/fest-sevilla"
+    | "/paises-invitados"
     | "/patrocinio"
     | "/sedes"
     | "/sevilla"
@@ -118,6 +129,7 @@ export interface FileRouteTypes {
     | "/contacto"
     | "/evento"
     | "/fest-sevilla"
+    | "/paises-invitados"
     | "/patrocinio"
     | "/sedes"
     | "/sevilla"
@@ -129,6 +141,7 @@ export interface RootRouteChildren {
   ContactoRoute: typeof ContactoRoute
   EventoRoute: typeof EventoRoute
   FestSevillaRoute: typeof FestSevillaRoute
+  PaisesInvitadosRoute: typeof PaisesInvitadosRoute
   PatrocinioRoute: typeof PatrocinioRoute
   SedesRoute: typeof SedesRoute
   SevillaRoute: typeof SevillaRoute
@@ -155,6 +168,13 @@ declare module "@tanstack/react-router" {
       path: "/patrocinio"
       fullPath: "/patrocinio"
       preLoaderRoute: typeof PatrocinioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    "/paises-invitados": {
+      id: "/paises-invitados"
+      path: "/paises-invitados"
+      fullPath: "/paises-invitados"
+      preLoaderRoute: typeof PaisesInvitadosRouteImport
       parentRoute: typeof rootRouteImport
     }
     "/fest-sevilla": {
@@ -201,6 +221,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactoRoute: ContactoRoute,
   EventoRoute: EventoRoute,
   FestSevillaRoute: FestSevillaRoute,
+  PaisesInvitadosRoute: PaisesInvitadosRoute,
   PatrocinioRoute: PatrocinioRoute,
   SedesRoute: SedesRoute,
   SevillaRoute: SevillaRoute,

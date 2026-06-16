@@ -5,6 +5,7 @@ import { Concept } from "@/components/Concept";
 import { EventSection } from "@/components/EventSection";
 import { Sevilla } from "@/components/Sevilla";
 import { SevillaMap } from "@/components/SevillaMap";
+import { GuestCountries } from "@/components/GuestCountries";
 import { Sponsors } from "@/components/Sponsors";
 import { FestTeaser } from "@/components/FestTeaser";
 import { ContactForm } from "@/components/ContactForm";
@@ -77,6 +78,7 @@ function Index() {
       <EventSection />
       <Sevilla />
       <SevillaMap />
+      <GuestCountries />
       <Sponsors />
       <FestTeaser />
       <ContactForm />
