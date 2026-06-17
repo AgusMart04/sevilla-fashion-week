@@ -11,7 +11,7 @@ const pillars = [
 
 export function Sevilla() {
   return (
-    <section id="sevilla" className="relative bg-background">
+    <section id="sevilla" className="relative bg-purple-mid">
       <div className="relative h-[80vh] min-h-[520px] overflow-hidden">
         <img
           src={sevilla}
@@ -21,19 +21,19 @@ export function Sevilla() {
           loading="lazy"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-deep/40 via-purple-deep/20 to-purple-mid" />
         <div className="absolute inset-0 flex items-center justify-center px-6">
           <Reveal>
             <div className="text-center">
-              <div className="mb-6 flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-silver">
-                <span className="h-px w-8 bg-silver" />
+              <div className="mb-6 flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.4em] text-primary">
+                <span className="h-px w-8 bg-primary" />
                 <span>III · Destino</span>
-                <span className="h-px w-8 bg-silver" />
+                <span className="h-px w-8 bg-primary" />
               </div>
-              <h2 className="font-display text-6xl md:text-8xl lg:text-9xl silver-text">
+              <h2 className="font-display text-6xl md:text-8xl lg:text-9xl gold-text">
                 Sevilla
               </h2>
-              <p className="mt-6 font-serif italic text-xl md:text-2xl text-silver/90">
+              <p className="mt-6 font-serif italic text-xl md:text-2xl text-primary/90">
                 Más que una ubicación. Un destino.
               </p>
             </div>
@@ -45,11 +45,11 @@ export function Sevilla() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-border">
           {pillars.map((p, i) => (
             <Reveal key={p.n} delay={i * 120}>
-              <div className="group h-full bg-background p-8 transition-all duration-700 hover:bg-card">
-                <div className="font-serif text-2xl text-silver/50">{p.n}</div>
-                <div className="mt-8 font-serif text-2xl italic text-silver-bright">{p.t}</div>
+              <div className="group h-full bg-card p-8 transition-all duration-700 hover:bg-purple-deep">
+                <div className="font-serif text-2xl text-primary/50">{p.n}</div>
+                <div className="mt-8 font-serif text-2xl italic text-primary-bright">{p.t}</div>
                 <div className="mt-3 text-xs text-muted-foreground leading-relaxed">{p.d}</div>
-                <div className="mt-6 h-px w-6 bg-silver/40 transition-all duration-700 group-hover:w-full" />
+                <div className="mt-6 h-px w-6 bg-primary/40 transition-all duration-700 group-hover:w-full" />
               </div>
             </Reveal>
           ))}
