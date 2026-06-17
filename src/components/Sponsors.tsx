@@ -191,18 +191,19 @@ export function Sponsors() {
   };
 
   return (
-    <section id="patrocinadores" className="relative bg-background py-32 md:py-48">
+    <section id="patrocinadores" className="relative bg-purple-mid py-32 md:py-48">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <Reveal>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">
             <div>
-              <div className="mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-silver">
-                <span className="h-px w-8 bg-silver" />
+              <div className="mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-primary">
+                <span className="h-px w-8 bg-primary" />
                 <span>V · Colaboración</span>
               </div>
-              <h2 className="font-display text-5xl md:text-7xl silver-text max-w-3xl text-balance">
+              <h2 className="font-display text-5xl md:text-7xl gold-text max-w-3xl text-balance">
                 Oportunidades de <span className="italic">colaboración</span>.
               </h2>
+              <div className="mt-6 h-px w-16 gold-line" />
             </div>
             <p className="max-w-md text-muted-foreground">
               Espacios estratégicos para marcas globales que buscan asociarse con
@@ -217,21 +218,21 @@ export function Sponsors() {
               <article
                 className={`group relative h-full p-10 md:p-14 transition-all duration-700 ${
                   t.featured
-                    ? "bg-card text-silver-bright"
-                    : "bg-background hover:bg-card"
+                    ? "bg-card text-primary-bright"
+                    : "bg-card hover:bg-purple-deep"
                 }`}
               >
                 <div className="flex items-start justify-between">
-                  <div className="text-[10px] uppercase tracking-[0.4em] text-silver">
+                  <div className="text-[10px] uppercase tracking-[0.4em] text-primary">
                     {t.tag}
                   </div>
                   {t.featured && (
-                    <div className="text-[9px] uppercase tracking-[0.32em] text-ink bg-silver-bright px-2 py-1">
+                    <div className="text-[9px] uppercase tracking-[0.32em] text-ink bg-primary-bright px-2 py-1">
                       Exclusivo
                     </div>
                   )}
                 </div>
-                <h3 className="mt-8 font-display text-4xl md:text-5xl silver-text">
+                <h3 className="mt-8 font-display text-4xl md:text-5xl gold-text">
                   {t.name}
                 </h3>
                 <p className="mt-6 max-w-md text-sm leading-relaxed text-muted-foreground">
@@ -241,9 +242,9 @@ export function Sponsors() {
                   {t.perks.map((p) => (
                     <li
                       key={p}
-                      className="flex items-center gap-4 text-[11px] uppercase tracking-[0.24em] text-silver-bright"
+                      className="flex items-center gap-4 text-[11px] uppercase tracking-[0.24em] text-primary-bright"
                     >
-                      <span className="h-px w-6 bg-silver" />
+                      <span className="h-px w-6 bg-primary" />
                       {p}
                     </li>
                   ))}
@@ -252,19 +253,19 @@ export function Sponsors() {
                   {t.details && (
                     <button
                       onClick={() => setOpenTier(t.tag)}
-                      className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-silver/60 hover:text-silver-bright transition-colors min-h-[44px]"
+                      className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-primary/60 hover:text-primary-bright transition-colors min-h-[44px]"
                     >
                       Ver detalles
-                      <span className="h-px w-6 bg-silver/40" />
+                      <span className="h-px w-6 bg-primary/40" />
                     </button>
                   )}
                   <Link
                     to="/contacto"
                     onClick={handleContactClick}
-                    className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-silver-bright group/cta min-h-[44px]"
+                    className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-primary-bright group/cta min-h-[44px]"
                   >
                     Solicitar dossier
-                    <span className="h-px w-8 bg-silver transition-all duration-500 group-hover/cta:w-14" />
+                    <span className="h-px w-8 bg-primary transition-all duration-500 group-hover/cta:w-14" />
                   </Link>
                 </div>
               </article>
@@ -275,7 +276,7 @@ export function Sponsors() {
         {/* Logo wall */}
         <Reveal delay={300}>
           <div className="mt-24">
-            <div className="text-[10px] uppercase tracking-[0.4em] text-silver/60 text-center mb-10">
+            <div className="text-[10px] uppercase tracking-[0.4em] text-primary/60 text-center mb-10">
               Espacios reservados — Edición 2026
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
@@ -290,7 +291,7 @@ export function Sponsors() {
               ].map((s) => (
                 <div
                   key={s.name}
-                  className="aspect-[3/2] bg-background flex items-center justify-center p-3 md:p-4"
+                  className="aspect-[3/2] bg-card flex items-center justify-center p-3 md:p-4"
                 >
                   <img
                     src={s.logo}
@@ -302,7 +303,7 @@ export function Sponsors() {
               {Array.from({ length: 5 }).map((_, i) => (
                 <div
                   key={`placeholder-${i}`}
-                  className="aspect-[3/2] bg-background flex items-center justify-center text-silver/20 font-serif italic text-xs"
+                  className="aspect-[3/2] bg-card flex items-center justify-center text-primary/20 font-serif italic text-xs"
                 >
                   Your Brand
                 </div>
@@ -313,14 +314,14 @@ export function Sponsors() {
       </div>
 
       <Dialog open={!!openTier} onOpenChange={(open) => !open && setOpenTier(null)}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-background border-border">
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-purple-deep border-border">
           {selectedTier && (
             <>
               <DialogHeader>
-                <div className="text-[10px] uppercase tracking-[0.4em] text-silver mb-2">
+                <div className="text-[10px] uppercase tracking-[0.4em] text-primary mb-2">
                   {selectedTier.tag}
                 </div>
-                <DialogTitle className="font-display text-3xl md:text-4xl silver-text">
+                <DialogTitle className="font-display text-3xl md:text-4xl gold-text">
                   {selectedTier.name}
                 </DialogTitle>
                 <DialogDescription className="text-muted-foreground">
@@ -330,7 +331,7 @@ export function Sponsors() {
               <div className="mt-6 space-y-8">
                 {selectedTier.details.sections.map((section) => (
                   <div key={section.title}>
-                    <h4 className="text-[10px] uppercase tracking-[0.4em] text-silver mb-4">
+                    <h4 className="text-[10px] uppercase tracking-[0.4em] text-primary mb-4">
                       {section.title}
                     </h4>
                     <ul className="space-y-2">
@@ -339,7 +340,7 @@ export function Sponsors() {
                           key={item}
                           className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed"
                         >
-                          <span className="mt-2 h-px w-4 shrink-0 bg-silver/40" />
+                          <span className="mt-2 h-px w-4 shrink-0 bg-primary/40" />
                           {item}
                         </li>
                       ))}
@@ -354,10 +355,10 @@ export function Sponsors() {
                     setOpenTier(null);
                     handleContactClick(e);
                   }}
-                  className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-silver-bright group/cta min-h-[44px]"
+                  className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.32em] text-primary-bright group/cta min-h-[44px]"
                 >
                   Solicitar dossier
-                  <span className="h-px w-8 bg-silver transition-all duration-500 group-hover/cta:w-14" />
+                  <span className="h-px w-8 bg-primary transition-all duration-500 group-hover/cta:w-14" />
                 </Link>
               </div>
             </>

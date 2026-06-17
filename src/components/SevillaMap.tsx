@@ -54,6 +54,13 @@ export const VENUES = [
     coords: [37.3826, -6.0008] as [number, number],
     description: "Recorrido cultural y experiencias gastronómicas curadas.",
   },
+  {
+    id: "sevilla-fc",
+    name: "Sevilla Fútbol Club",
+    type: "Institución Deportiva",
+    coords: [37.3840, -5.9706] as [number, number],
+    description: "Estadio Ramón Sánchez-Pizjuán.",
+  },
 ];
 
 const DARK_TILES = "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png";
@@ -98,27 +105,27 @@ export function SevillaMap() {
 
 
   return (
-    <section id="mapa" className="relative bg-ink py-32 md:py-48 overflow-hidden">
+    <section id="mapa" className="relative bg-purple-deep py-32 md:py-48 overflow-hidden">
       <style>{`
         .sfw-marker { position: relative; }
         .sfw-marker-dot {
           position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-          width: 10px; height: 10px; background: oklch(0.92 0.006 80); border-radius: 50%;
-          box-shadow: 0 0 0 1px oklch(0.92 0.006 80 / 0.4), 0 0 12px oklch(0.92 0.006 80 / 0.6);
+          width: 10px; height: 10px; background: oklch(0.78 0.14 85); border-radius: 50%;
+          box-shadow: 0 0 0 1px oklch(0.78 0.14 85 / 0.4), 0 0 12px oklch(0.78 0.14 85 / 0.6);
           z-index: 2;
         }
         .sfw-marker-ring {
           position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-          width: 28px; height: 28px; border: 1px solid oklch(0.92 0.006 80 / 0.4); border-radius: 50%;
+          width: 28px; height: 28px; border: 1px solid oklch(0.78 0.14 85 / 0.4); border-radius: 50%;
           animation: sfwPulse 2.6s ease-out infinite;
         }
         @keyframes sfwPulse {
           0% { transform: translate(-50%,-50%) scale(0.6); opacity: 1; }
           100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
         }
-        .leaflet-container { background: oklch(0.08 0.002 270); font-family: var(--font-sans); }
+        .leaflet-container { background: oklch(0.12 0.06 300); font-family: var(--font-sans); }
         .leaflet-popup-content-wrapper {
-          background: oklch(0.10 0.003 270 / 0.92);
+          background: oklch(0.14 0.06 300 / 0.92);
           backdrop-filter: blur(20px);
           color: oklch(0.96 0.005 80);
           border: 1px solid oklch(1 0 0 / 0.12);
@@ -127,30 +134,30 @@ export function SevillaMap() {
           padding: 4px;
         }
         .leaflet-popup-content { margin: 16px 18px; min-width: 220px; }
-        .leaflet-popup-tip { background: oklch(0.10 0.003 270); border: 1px solid oklch(1 0 0 / 0.12); }
-        .leaflet-popup-close-button { color: oklch(0.78 0.008 80) !important; font-size: 18px !important; padding: 8px !important; }
+        .leaflet-popup-tip { background: oklch(0.14 0.06 300); border: 1px solid oklch(1 0 0 / 0.12); }
+        .leaflet-popup-close-button { color: oklch(0.78 0.14 85) !important; font-size: 18px !important; padding: 8px !important; }
         .leaflet-control-zoom a {
-          background: oklch(0.10 0.003 270 / 0.8) !important;
-          color: oklch(0.92 0.006 80) !important;
+          background: oklch(0.14 0.06 300 / 0.8) !important;
+          color: oklch(0.78 0.14 85) !important;
           border: 1px solid oklch(1 0 0 / 0.1) !important;
           backdrop-filter: blur(12px);
         }
         .leaflet-control-attribution {
-          background: oklch(0.08 0.002 270 / 0.6) !important;
+          background: oklch(0.12 0.06 300 / 0.6) !important;
           color: oklch(0.62 0.008 80) !important;
           font-size: 9px !important;
         }
-        .leaflet-control-attribution a { color: oklch(0.78 0.008 80) !important; }
+        .leaflet-control-attribution a { color: oklch(0.78 0.14 85) !important; }
       `}</style>
 
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
         <Reveal>
-          <div className="mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-silver">
-            <span className="h-px w-8 bg-silver" />
+          <div className="mb-6 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-primary">
+            <span className="h-px w-8 bg-primary" />
             <span>IV · El Mapa de la Experiencia</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="font-display text-5xl md:text-7xl silver-text max-w-3xl text-balance">
+            <h2 className="font-display text-5xl md:text-7xl gold-text max-w-3xl text-balance">
               Sedes y <span className="italic">puntos clave</span>.
             </h2>
             <p className="max-w-md text-muted-foreground">
@@ -161,7 +168,7 @@ export function SevillaMap() {
         </Reveal>
 
         <div className="relative mt-16 hairline overflow-hidden">
-            <div className="aspect-[4/3] md:aspect-[21/10] w-full bg-background relative">
+            <div className="aspect-[4/3] md:aspect-[21/10] w-full bg-purple-deep relative">
               {Comp ? (
                 <Comp.MapContainer
                   center={[37.388, -5.982]}
@@ -179,20 +186,20 @@ export function SevillaMap() {
                   {VENUES.map((v) => (
                     <Comp.Marker key={v.id} position={v.coords} icon={Comp.silverIcon}>
                       <Comp.Popup>
-                        <div className="text-[10px] uppercase tracking-[0.32em] text-silver mb-2">
+                        <div className="text-[10px] uppercase tracking-[0.32em] text-primary mb-2">
                           {v.type}
                         </div>
-                        <div className="font-serif text-xl italic text-silver-bright mb-2">
+                        <div className="font-serif text-xl italic text-primary-bright mb-2">
                           {v.name}
                         </div>
                         <div className="text-xs text-muted-foreground leading-relaxed">
                           {v.description}
                         </div>
                         <a
-                          href={`https://www.google.com/maps?q=${v.coords[0]},${v.coords[1]}`}
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.name + ", Sevilla")}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-block mt-3 text-[10px] uppercase tracking-[0.32em] text-silver/70 border border-silver/30 px-4 py-2 hover:bg-silver/10 transition-colors"
+                          className="inline-block mt-3 text-[10px] uppercase tracking-[0.32em] text-primary/70 border border-silver/30 px-4 py-2 hover:bg-primary/10 transition-colors"
                         >
                           Abrir en Google Maps →
                         </a>
@@ -210,14 +217,14 @@ export function SevillaMap() {
           </div>
 
 
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-px bg-border">
           {VENUES.map((v, i) => (
             <Reveal key={v.id} delay={i * 80}>
-              <div className="bg-background p-5 h-full">
-                <div className="text-[9px] uppercase tracking-[0.32em] text-silver/70">
+              <div className="bg-card p-5 h-full">
+                <div className="text-[9px] uppercase tracking-[0.32em] text-primary/70">
                   {v.type}
                 </div>
-                <div className="mt-2 font-serif text-base italic text-silver-bright">
+                <div className="mt-2 font-serif text-base italic text-primary-bright">
                   {v.name}
                 </div>
               </div>

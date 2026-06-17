@@ -69,7 +69,7 @@ export function Nav() {
                 >
                   {l.label}
                   <span
-                    className={`absolute -bottom-2 left-0 h-px bg-silver transition-all duration-500 ${
+                    className={`absolute -bottom-2 left-0 h-px bg-primary transition-all duration-500 ${
                       active ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
@@ -80,7 +80,7 @@ export function Nav() {
 
           <Link
             to="/patrocinio"
-            className="hidden lg:inline-flex items-center gap-3 border border-silver/40 px-5 py-2.5 text-[11px] uppercase tracking-[0.24em] text-silver-bright transition-all duration-500 hover:bg-silver hover:text-ink min-h-[44px]"
+            className="hidden lg:inline-flex items-center gap-3 border border-primary/40 px-5 py-2.5 text-[11px] uppercase tracking-[0.24em] text-primary transition-all duration-500 hover:bg-primary hover:text-primary-foreground min-h-[44px]"
           >
             Patrocinar
             <span className="h-px w-4 bg-current" />
@@ -105,13 +105,13 @@ export function Nav() {
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         style={{
-          background: "oklch(0.04 0.002 270 / 0.85)",
+          background: "oklch(0.12 0.06 300 / 0.92)",
           backdropFilter: "blur(40px) saturate(160%)",
           WebkitBackdropFilter: "blur(40px) saturate(160%)",
         }}
       >
         <div className="flex h-full flex-col px-6 pt-28 pb-12">
-          <div className="text-[10px] uppercase tracking-[0.4em] text-silver/60 mb-10">
+          <div className="text-[10px] uppercase tracking-[0.4em] text-primary/60 mb-10">
             Navegación
           </div>
           <nav className="flex flex-col">
@@ -135,15 +135,15 @@ export function Nav() {
           <div className="mt-auto pt-10 flex flex-col gap-4">
             <Link
               to="/patrocinio"
-              className="inline-flex justify-center items-center border border-silver/40 px-5 py-4 text-[11px] uppercase tracking-[0.32em] text-silver-bright min-h-[52px] hover:bg-silver hover:text-ink transition-colors"
+              className="inline-flex justify-center items-center border border-primary/40 px-5 py-4 text-[11px] uppercase tracking-[0.32em] text-primary min-h-[52px] hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               Convertirse en patrocinador
             </Link>
             <a
-              href="mailto:partners@sevillafashionweek.com"
+              href="mailto:sevillafashionweek.oficial@gmail.com"
               className="text-center font-serif italic text-sm text-silver/80"
             >
-              partners@sevillafashionweek.com
+              sevillafashionweek.oficial@gmail.com
             </a>
           </div>
         </div>
