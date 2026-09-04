@@ -16,7 +16,7 @@ export function Footer() {
             </p>
             <div className="mt-8 flex items-center gap-3 text-[10px] uppercase tracking-[0.32em] text-primary">
               <span className="h-px w-8 bg-primary" />
-              <span>01 — 10 Septiembre 2026</span>
+              <span>14 — 23 Marzo 2027</span>
             </div>
           </div>
 

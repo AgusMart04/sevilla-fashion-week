@@ -5,7 +5,7 @@ export const Route = createFileRoute("/evento")({
   head: () => ({
     meta: [
       { title: "El Evento — Sevilla Fashion Week" },
-      { name: "description", content: "Programa, desfiles y experiencias de Sevilla Fashion Week 2026." },
+      { name: "description", content: "Programa, desfiles y experiencias de Sevilla Fashion Week 2027." },
       { property: "og:title", content: "El Evento — Sevilla Fashion Week" },
       { property: "og:description", content: "Diez días, tres fases, más de cincuenta diseñadores." },
       { property: "og:image", content: "https://sevilla-fashion-week-demo.vercel.app/og-image.jpg" },

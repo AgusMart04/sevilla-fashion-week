@@ -17,11 +17,11 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Sevilla Fashion Week. Del 1 al 10 de septiembre, la moda internacional se encuentra con la historia en Andalucía. Patrocinio, desfiles e industria.",
+          "Sevilla Fashion Week. Del 14 al 23 de marzo, la moda internacional se encuentra con la historia en Andalucía. Patrocinio, desfiles e industria.",
       },
       { name: "keywords", content: "Sevilla Fashion Week, Fashion Week Sevilla, Fashion Week España, moda Sevilla, pasarela Sevilla" },
       { property: "og:title", content: "Sevilla Fashion Week" },
-          { property: "og:description", content: "Un nuevo destino internacional de la moda en el corazón de Andalucía. 1–10 Septiembre." },
+          { property: "og:description", content: "Un nuevo destino internacional de la moda en el corazón de Andalucía. 14–23 Marzo 2027." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://sevilla-fashion-week-demo.vercel.app" },
       { property: "og:image", content: "https://sevilla-fashion-week-demo.vercel.app/og-image.jpg" },
@@ -36,8 +36,8 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "Event",
           name: "Sevilla Fashion Week",
-          startDate: "2026-09-01",
-          endDate: "2026-09-10",
+          startDate: "2027-03-14",
+          endDate: "2027-03-23",
           eventStatus: "https://schema.org/EventScheduled",
           eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
           location: {

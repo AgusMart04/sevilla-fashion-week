@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import hero from "@/assets/hero.jpg";
+import sambrizziLogo from "@/assets/sambrizzi-logo.webp";
 
 
 export function Hero() {
@@ -19,7 +20,7 @@ export function Hero() {
       <div className="absolute inset-x-0 top-28 z-10 flex justify-center px-6 rise rise-1">
         <div className="flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-primary">
           <span className="h-px w-10 bg-primary/60" />
-          <span>Edición Inaugural · MMXXVI</span>
+          <span>Edición Inaugural · MMXXVII</span>
           <span className="h-px w-10 bg-primary/60" />
         </div>
       </div>
@@ -36,9 +37,9 @@ export function Hero() {
         </p>
 
         <div className="rise rise-3 mt-12 flex items-center gap-6 text-[11px] uppercase tracking-[0.4em] text-silver-bright">
-          <span>01 SEP</span>
-          <span className="h-px w-8 bg-silver" />
-          <span>10 SEP</span>
+            <span>14 MAR</span>
+            <span className="h-px w-8 bg-silver" />
+            <span>23 MAR 2027</span>
         </div>
 
         <div className="rise rise-4 mt-16 flex flex-col sm:flex-row items-center gap-4">
@@ -62,17 +63,15 @@ export function Hero() {
 
       {/* Bottom marquee */}
       <div className="absolute inset-x-0 bottom-0 z-10 border-t border-border glass">
-        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-8 px-6 py-5 md:px-12">
-          <span className="hidden md:block font-serif text-sm italic text-silver/80">
-            Sevilla te invita.
-          </span>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-2 text-[10px] uppercase tracking-[0.32em] text-muted-foreground">
+        <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-4 md:gap-8 px-6 py-4 md:py-5 md:px-12">
+          <img src={sambrizziLogo} alt="Sambrizzi Producción" className="h-8 md:h-10 w-auto opacity-80 shrink-0" />
+          <div className="flex flex-wrap items-center justify-end gap-x-4 md:gap-x-8 gap-y-1 text-[8px] md:text-[10px] uppercase tracking-[0.24em] md:tracking-[0.32em] text-muted-foreground">
             <span>10 Días</span>
-            <span className="h-px w-4 bg-silver/40" />
+            <span className="h-px w-3 md:w-4 bg-silver/40" />
             <span>3 Fases</span>
-            <span className="h-px w-4 bg-silver/40" />
+            <span className="h-px w-3 md:w-4 bg-silver/40" />
             <span>+50 Diseñadores</span>
-            <span className="h-px w-4 bg-silver/40 hidden md:inline-block" />
+            <span className="h-px w-3 md:w-4 bg-silver/40 hidden md:inline-block" />
             <span className="hidden md:inline">Showroom Internacional</span>
           </div>
         </div>

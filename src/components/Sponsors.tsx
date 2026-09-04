@@ -8,6 +8,7 @@ import sponsor4 from "@/assets/sponsors/sponsor-4.png";
 import sponsor5 from "@/assets/sponsors/sponsor-5.png";
 import sponsor6 from "@/assets/sponsors/sponsor-6.png";
 import sponsor7 from "@/assets/sponsors/sponsor-7.png";
+import sponsor8 from "@/assets/sponsors/sponsor-8.png";
 import {
   Dialog,
   DialogContent,
@@ -277,9 +278,9 @@ export function Sponsors() {
         <Reveal delay={300}>
           <div className="mt-24">
             <div className="text-[10px] uppercase tracking-[0.4em] text-primary/60 text-center mb-10">
-              Espacios reservados — Edición 2026
+              Espacios reservados — Edición 2027
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-border">
+            <div className="flex flex-wrap">
               {[
                 { name: "Sponsor 1", logo: sponsor1 },
                 { name: "Sponsor 2", logo: sponsor2 },
@@ -288,24 +289,17 @@ export function Sponsors() {
                 { name: "Sponsor 5", logo: sponsor5 },
                 { name: "Sponsor 6", logo: sponsor6 },
                 { name: "Sponsor 7", logo: sponsor7 },
+                { name: "Sponsor 8", logo: sponsor8 },
               ].map((s) => (
                 <div
                   key={s.name}
-                  className="aspect-[3/2] bg-card flex items-center justify-center p-3 md:p-4"
+                  className="w-1/2 md:w-1/3 lg:w-1/6 aspect-[3/2] bg-card flex items-center justify-center p-3 md:p-4 border border-border/15"
                 >
                   <img
                     src={s.logo}
                     alt={s.name}
                     className="max-h-full max-w-full object-contain"
                   />
-                </div>
-              ))}
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={`placeholder-${i}`}
-                  className="aspect-[3/2] bg-card flex items-center justify-center text-primary/20 font-serif italic text-xs"
-                >
-                  Your Brand
                 </div>
               ))}
             </div>

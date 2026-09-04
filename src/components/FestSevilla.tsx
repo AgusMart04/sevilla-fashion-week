@@ -217,7 +217,7 @@ export function FestSevilla() {
               ))}
             </div>
             <div className="mt-10 text-center text-[10px] uppercase tracking-[0.4em] text-primary/40">
-              Espacios reservados — Edición 2026
+              Espacios reservados — Edición 2027
             </div>
           </Reveal>
         </div>

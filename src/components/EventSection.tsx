@@ -8,9 +8,9 @@ import {
 } from "@/components/ui/dialog";
 
 const days = [
-  { d: "01–04", l: "SEP", t: "Desfiles", desc: "Cuatro jornadas de pasarela con firmas internacionales y talento emergente seleccionado." },
-  { d: "05–07", l: "SEP", t: "Showroom", desc: "Exhibición curada de colecciones para compradores y prensa especializada." },
-  { d: "08–10", l: "SEP", t: "Industria", desc: "Networking, rondas de negocio, charlas internacionales y alianzas estratégicas." },
+  { d: "14–17", l: "MAR", t: "Desfiles", desc: "Cuatro jornadas de pasarela con firmas internacionales y talento emergente seleccionado." },
+  { d: "18–20", l: "MAR", t: "Showroom", desc: "Exhibición curada de colecciones para compradores y prensa especializada." },
+  { d: "21–23", l: "MAR", t: "Industria", desc: "Networking, rondas de negocio, charlas internacionales y alianzas estratégicas." },
 ];
 
 export function EventSection() {
